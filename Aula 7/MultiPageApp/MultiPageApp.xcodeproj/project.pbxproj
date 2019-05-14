@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158ECF78228B299F00B965CD /* MusicasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ECF77228B299F00B965CD /* MusicasViewController.swift */; };
 		15AD5DC9228AFFC9002F235C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD5DC8228AFFC9002F235C /* AppDelegate.swift */; };
 		15AD5DCB228AFFC9002F235C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD5DCA228AFFC9002F235C /* ViewController.swift */; };
 		15AD5DCE228AFFC9002F235C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AD5DCC228AFFC9002F235C /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		158ECF77228B299F00B965CD /* MusicasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicasViewController.swift; sourceTree = "<group>"; };
 		15AD5DC5228AFFC9002F235C /* MultiPageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiPageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AD5DC8228AFFC9002F235C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15AD5DCA228AFFC9002F235C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,12 +99,10 @@
 		15AD5DC7228AFFC9002F235C /* MultiPageApp */ = {
 			isa = PBXGroup;
 			children = (
-				15AD5DC8228AFFC9002F235C /* AppDelegate.swift */,
-				15AD5DCA228AFFC9002F235C /* ViewController.swift */,
-				15AD5DCC228AFFC9002F235C /* Main.storyboard */,
+				15AD5DF8228B17C4002F235C /* Controller */,
+				15AD5DF7228B17AB002F235C /* View */,
+				15AD5DF6228B1778002F235C /* Support */,
 				15AD5DCF228AFFCA002F235C /* Assets.xcassets */,
-				15AD5DD1228AFFCA002F235C /* LaunchScreen.storyboard */,
-				15AD5DD4228AFFCA002F235C /* Info.plist */,
 			);
 			path = MultiPageApp;
 			sourceTree = "<group>";
@@ -123,6 +123,33 @@
 				15AD5DEA228AFFCB002F235C /* Info.plist */,
 			);
 			path = MultiPageAppUITests;
+			sourceTree = "<group>";
+		};
+		15AD5DF6228B1778002F235C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				15AD5DD4228AFFCA002F235C /* Info.plist */,
+				15AD5DC8228AFFC9002F235C /* AppDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		15AD5DF7228B17AB002F235C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15AD5DD1228AFFCA002F235C /* LaunchScreen.storyboard */,
+				15AD5DCC228AFFC9002F235C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15AD5DF8228B17C4002F235C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				158ECF77228B299F00B965CD /* MusicasViewController.swift */,
+				15AD5DCA228AFFC9002F235C /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +285,7 @@
 			files = (
 				15AD5DCB228AFFC9002F235C /* ViewController.swift in Sources */,
 				15AD5DC9228AFFC9002F235C /* AppDelegate.swift in Sources */,
+				158ECF78228B299F00B965CD /* MusicasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MultiPageApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MultiPageApp/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MultiPageApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MultiPageApp/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
