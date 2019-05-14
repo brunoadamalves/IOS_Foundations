@@ -30,6 +30,9 @@
                                 <state key="normal" title="Entre com e-mail">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YSC-5c-kob"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmF-uo-wd5">
                                 <rect key="frame" x="20" y="649" width="374" height="55"/>
@@ -38,6 +41,9 @@
                                 <state key="normal" title="Entre com Facebook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x25-9U-XDR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R7-bp-eSP">
                                 <rect key="frame" x="20" y="712" width="374" height="55"/>
@@ -47,6 +53,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="googlePlusButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEt-ke-1MZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PUCarona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxy-l0-NeU">
                                 <rect key="frame" x="129" y="116" width="156" height="40"/>
@@ -82,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076.8115942028987" y="20.758928571428569"/>
+            <point key="canvasLocation" x="2778" y="21"/>
         </scene>
         <!--Músicas-->
         <scene sceneID="VdV-X6-9tm">
@@ -179,13 +188,35 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-3Y-lFy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Músicas" id="6J9-gj-FHC">
+                                        <barButtonItem key="leftBarButtonItem" title="Login" id="6OG-Ux-kox">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="aHQ-Lh-c97"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="vEy-DK-FNe">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="DfV-D2-3QD" kind="show" id="lVN-fm-nRD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vTr-ZO-Dpq"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Músicas" id="fS1-Lf-d7K">
                         <barButtonItem key="backBarButtonItem" title="Login" id="rCQ-uw-3Mw"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="add80Button" destination="Dqj-7h-CtY" id="bEN-eU-4yl"/>
                         <outlet property="addFunkEstiloButton" destination="v2L-9c-FvJ" id="koZ-lO-AYZ"/>
@@ -196,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4S-F1-EYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886.9565217391305" y="20.758928571428569"/>
+            <point key="canvasLocation" x="3765" y="21"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rhL-7j-C40">
@@ -254,13 +285,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avz-Lg-Yfb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Reumo" id="O5H-H7-K9m">
+                                        <barButtonItem key="leftBarButtonItem" title="Músicas" id="WOo-ik-oa7">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="5Wl-kO-O5h" kind="show" id="dHa-q4-vEz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Finalizar" id="HCl-4Z-5oc">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BEk-q7-wNE"/>
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2621.739130434783" y="20.758928571428569"/>
+            <point key="canvasLocation" x="4758" y="21"/>
         </scene>
     </scenes>
     <resources>
