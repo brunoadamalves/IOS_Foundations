@@ -14,6 +14,7 @@
 		155AAF3B228C351C00158A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155AAF39228C351C00158A44 /* LaunchScreen.storyboard */; };
 		155AAF46228C351D00158A44 /* Aula_8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155AAF45228C351D00158A44 /* Aula_8Tests.swift */; };
 		155AAF51228C351D00158A44 /* Aula_8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155AAF50228C351D00158A44 /* Aula_8UITests.swift */; };
+		155AAF5F228C35BF00158A44 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155AAF5E228C35BF00158A44 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		155AAF4C228C351D00158A44 /* Aula 8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aula 8UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		155AAF50228C351D00158A44 /* Aula_8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aula_8UITests.swift; sourceTree = "<group>"; };
 		155AAF52228C351D00158A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		155AAF5E228C35BF00158A44 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				155AAF30228C351C00158A44 /* AppDelegate.swift */,
 				155AAF32228C351C00158A44 /* ViewController.swift */,
 				155AAF34228C351C00158A44 /* Main.storyboard */,
+				155AAF5E228C35BF00158A44 /* CustomTableViewCell.swift */,
 				155AAF37228C351C00158A44 /* Assets.xcassets */,
 				155AAF39228C351C00158A44 /* LaunchScreen.storyboard */,
 				155AAF3C228C351C00158A44 /* Info.plist */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155AAF5F228C35BF00158A44 /* CustomTableViewCell.swift in Sources */,
 				155AAF33228C351C00158A44 /* ViewController.swift in Sources */,
 				155AAF31228C351C00158A44 /* AppDelegate.swift in Sources */,
 			);
