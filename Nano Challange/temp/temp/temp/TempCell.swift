@@ -10,11 +10,13 @@ import UIKit
 
 class TempCell: UITableViewCell {
 
+    @IBOutlet weak var teste: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var tempTitleLabel: UILabel!
     
     func setTempItem(tempItem: TempItem) {
         tempImageView.image = tempItem.image
+        teste.image = tempItem.image
         tempTitleLabel.text = tempItem.title
     }
 }

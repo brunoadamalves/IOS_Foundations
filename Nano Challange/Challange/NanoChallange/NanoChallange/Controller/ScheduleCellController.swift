@@ -14,8 +14,9 @@ class ScheduleCellController: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageLabel: UIImageView!
-    @IBOutlet weak var favoriteImage: UIImageView!
-    @IBOutlet weak var remiderImage: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var reminderButton: UIButton!
+    
     
     func setItem(newItem: Item){
         stageLabel.text = newItem.stage
@@ -23,7 +24,12 @@ class ScheduleCellController: UITableViewCell {
         titleLabel.text = newItem.title
         nameLabel.text = newItem.name
         imageLabel.image = UIImage(named: "img_isabela")
-        favoriteImage.image = UIImage(named: "ic_favorite")
-        favoriteImage.image = UIImage(named: "ic_time")
+        favoriteButton.setImage(UIImage(named: "ic_favorite"), for: .normal)
+        reminderButton.setImage(UIImage(named: "ic_time"), for: .normal)
+    }
+    
+    override func layoutSubviews() {
+        stageLabel.layer.masksToBounds = true
+        stageLabel.layer.cornerRadius = 10
     }
 }
