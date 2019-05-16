@@ -10,11 +10,41 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
 
+    @IBOutlet weak var scheduleTableView: UITableView!
+    
+    var tempItems: [Item] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tempItems = createTempArrayData()
+        
+        scheduleTableView.delegate = self
+        scheduleTableView.dataSource = self
     }
-
-
+    
+    func createTempArrayData() -> [Item] {
+        var tempItems : [Item] = []
+        
+        tempItems.append(Item(img: "teste", name: "Bruno Adam Alves", title: "Hello world", stage: "Stage 12", dateTime: "14:00", favorite: false, remider: false))
+        tempItems.append(Item(img: "teste2", name: "Chuck Norri", title: "How to round house kick", stage: "Stage 44", dateTime: "15:00", favorite: false, remider: false))
+        
+        return tempItems
+    }
 }
 
+extension ScheduleViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tempItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = tempItems[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as! ScheduleCellController
+        
+        cell.setItem(newItem: item)
+        
+        return cell
+    }
+}

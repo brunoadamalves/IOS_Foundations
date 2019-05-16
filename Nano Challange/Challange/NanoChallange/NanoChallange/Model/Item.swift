@@ -13,11 +13,11 @@ class Item {
     var name: String
     var title: String
     var stage: String
-    var dateTime: Date
+    var dateTime: String
     var favorite: Bool
     var remider: Bool
     
-    init(img: String, name: String, title: String, stage: String, dateTime: Date, favorite: Bool, remider: Bool) {
+    init(img: String, name: String, title: String, stage: String, dateTime: String, favorite: Bool, remider: Bool) {
         self.img = img
         self.name = name
         self.title = title

@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="190" id="5Qx-Th-O2b" customClass="ScheduleCellController" customModule="NanoChallange" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="190" id="5Qx-Th-O2b" customClass="ScheduleCellController" customModule="NanoChallange" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qx-Th-O2b" id="3GT-4r-LXi">
@@ -81,6 +81,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteImage" destination="fuR-2x-9lm" id="xTc-Cl-j9i"/>
+                                            <outlet property="hourLabel" destination="cuI-AS-bst" id="h8A-oP-Zkf"/>
+                                            <outlet property="imageLabel" destination="2c8-87-P6z" id="Ht3-0B-wXb"/>
+                                            <outlet property="nameLabel" destination="fze-7w-6sn" id="MhR-sy-J69"/>
+                                            <outlet property="remiderImage" destination="PJd-ZA-J2z" id="EQW-Ce-aeK"/>
+                                            <outlet property="stageLabel" destination="4U5-AT-NkU" id="STc-c6-lgF"/>
+                                            <outlet property="titleLabel" destination="yG4-20-rU9" id="VhQ-ge-KjX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,6 +104,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="50a-yc-hEc"/>
+                    <connections>
+                        <outlet property="scheduleTableView" destination="7ka-mx-Pfm" id="454-gQ-VqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
