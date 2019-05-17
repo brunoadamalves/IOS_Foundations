@@ -23,7 +23,7 @@ class ScheduleCellController: UITableViewCell {
         hourLabel.text = newItem.dateTime
         titleLabel.text = newItem.title
         nameLabel.text = newItem.name
-        imageLabel.image = UIImage(named: "img_isabela")
+        imageLabel.image = UIImage(named: newItem.img)
         favoriteButton.setImage(UIImage(named: "ic_favorite"), for: .normal)
         reminderButton.setImage(UIImage(named: "ic_time"), for: .normal)
     }
