@@ -21,6 +21,9 @@ class newsListViewController: UIViewController {
         
         newsTableView.delegate = self
         newsTableView.dataSource = self
+        
+        getJsonData()
+        
     }
     
     func createTempArrayData() -> [[newsItem]] {
@@ -42,6 +45,23 @@ class newsListViewController: UIViewController {
         ]
         
         return tempItems
+    }
+    
+    func getJsonData()
+    {
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=br&apiKey=c43772649cac4f4d936c628aced03b71")
+        
+        guard let downloadUrl = url else { return }
+        URLSession.shared.dataTask(with: downloadUrl) {data, URLResponse, error in
+            print("downloaded")
+            do {
+                let jsonDecoder = JSONDecoder()
+                let responseModel = try jsonDecoder.decode(Json4Swift_Base.self, from: data!)
+                print(responseModel)
+            } catch {
+                print("Something wrong after downloaded")
+            }
+        }.resume()
     }
 }
 
