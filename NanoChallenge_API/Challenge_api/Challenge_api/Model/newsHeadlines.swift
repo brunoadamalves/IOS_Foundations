@@ -8,36 +8,45 @@
 
 import Foundation
 
-class newsItem {
-    var title: String
-    var newsCover: String
-
-    init(title: String, newsCover: String) {
-        self.title = title
-        self.newsCover = newsCover
-    }
-}
-
-struct Json4Swift_Base : Codable {
+class newsHeadlines: Codable{
     let status : String?
     let totalResults : Int?
     let articles : [Articles]?
-    
+
     enum CodingKeys: String, CodingKey {
-        
+
         case status = "status"
         case totalResults = "totalResults"
         case articles = "articles"
     }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        status = try values.decodeIfPresent(String.self, forKey: .status)
-        totalResults = try values.decodeIfPresent(Int.self, forKey: .totalResults)
-        articles = try values.decodeIfPresent([Articles].self, forKey: .articles)
+
+    init(status: String, totalResults: Int, articles: [Articles]) {
+        self.status = status
+        self.totalResults = totalResults
+        self.articles = articles
     }
-    
 }
+
+//struct newsHeadlines : Codable {
+//    let status : String?
+//    let totalResults : Int?
+//    let articles : [Articles]?
+//
+//    enum CodingKeys: String, CodingKey {
+//
+//        case status = "status"
+//        case totalResults = "totalResults"
+//        case articles = "articles"
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        status = try values.decodeIfPresent(String.self, forKey: .status)
+//        totalResults = try values.decodeIfPresent(Int.self, forKey: .totalResults)
+//        articles = try values.decodeIfPresent([Articles].self, forKey: .articles)
+//    }
+//
+//}
 
 struct Source : Codable {
     let id : String?

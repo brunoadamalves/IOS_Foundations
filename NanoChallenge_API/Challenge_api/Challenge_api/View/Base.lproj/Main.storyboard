@@ -22,23 +22,30 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="155" id="jaI-ah-Ena" customClass="newsListCellController" customModule="Challenge_api" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="155"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="100" id="jaI-ah-Ena" customClass="newsListCellController" customModule="Challenge_api" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaI-ah-Ena" id="FOu-u6-rgM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="154.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-LS-Joz">
-                                                    <rect key="frame" x="190" y="67" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-LS-Joz">
+                                                    <rect key="frame" x="35" y="29" width="344" height="42"/>
+                                                    <color key="backgroundColor" red="0.98675471540000004" green="0.47269107900000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="RQ4-Sp-ZeI"/>
+                                                        <constraint firstAttribute="width" constant="344" id="gUE-Td-ePg"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerY" secondItem="FOu-u6-rgM" secondAttribute="centerY" id="6am-xQ-LEH"/>
-                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerX" secondItem="FOu-u6-rgM" secondAttribute="centerX" id="qGO-vo-vqI"/>
+                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerY" secondItem="FOu-u6-rgM" secondAttribute="centerY" id="Ali-cT-vhd"/>
+                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerX" secondItem="FOu-u6-rgM" secondAttribute="centerX" id="TLq-gR-Tsj"/>
+                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerX" secondItem="FOu-u6-rgM" secondAttribute="centerX" id="Xga-mj-vDp"/>
+                                                <constraint firstItem="Jgy-LS-Joz" firstAttribute="centerY" secondItem="FOu-u6-rgM" secondAttribute="centerY" id="aLR-CF-Kir"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
