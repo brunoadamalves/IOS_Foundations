@@ -13,7 +13,6 @@ class newsListCellController: UITableViewCell {
     @IBOutlet weak var newsTitle: UILabel!
     
     func setItem(newsItem: Articles){
-//        newsCover.image = #imageLiteral(resourceName: <#T##String#>)
         newsTitle.text = newsItem.title
     }
 }

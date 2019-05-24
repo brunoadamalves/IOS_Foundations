@@ -67,11 +67,44 @@
                     <navigationItem key="navigationItem" title="Breaking news headlines" id="8zz-Xa-VOc"/>
                     <connections>
                         <outlet property="newsTableView" destination="JsM-2S-xp7" id="pJg-IW-pWL"/>
+                        <segue destination="XWv-xO-Feb" kind="show" identifier="showDetail" id="mxe-cw-R03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.86956521739131" y="89.732142857142847"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="i0B-iT-ORI">
+            <objects>
+                <viewController id="XWv-xO-Feb" customClass="newsDetailViewController" customModule="Challenge_api" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cSy-N9-RRh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hep-i4-Re7">
+                                <rect key="frame" x="20" y="437.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hep-i4-Re7" firstAttribute="leading" secondItem="VFT-Bx-0mY" secondAttribute="leading" constant="20" id="JoX-Pl-Y4P"/>
+                            <constraint firstItem="VFT-Bx-0mY" firstAttribute="trailing" secondItem="hep-i4-Re7" secondAttribute="trailing" constant="20" id="MwO-zC-Kzd"/>
+                            <constraint firstItem="hep-i4-Re7" firstAttribute="centerY" secondItem="cSy-N9-RRh" secondAttribute="centerY" id="aup-cs-21q"/>
+                            <constraint firstItem="hep-i4-Re7" firstAttribute="centerX" secondItem="cSy-N9-RRh" secondAttribute="centerX" id="hkn-1q-iyV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VFT-Bx-0mY"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="hep-i4-Re7" id="frC-Af-lTY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPp-CS-g2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="89.732142857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Nt-RP-eXJ">

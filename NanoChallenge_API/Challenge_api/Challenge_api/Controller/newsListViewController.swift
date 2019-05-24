@@ -12,41 +12,16 @@ class newsListViewController: UIViewController {
 
     @IBOutlet weak var newsTableView: UITableView!
     
-//    var newsItems: [[newsHeadlines]] = []
     private var headlinesItems = [Articles]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        newsItems = createTempArrayData()
         
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
         getJsonData()
-        
     }
-    
-//    func createTempArrayData() -> [[newsHeadlines]] {
-//        var tempItems : [[newsHeadlines]] = [[]]
-//
-//        tempItems = [
-//            [
-//                newsHeadlines(title: "News Brasi 1", newsCover: "img2"),
-//                newsHeadlines(title: "News Brasil 2", newsCover: "img2")
-//            ],
-//            [
-//                newsHeadlines(title: "News EUA 1", newsCover: "img2"),
-//                newsHeadlines(title: "News EUA 2", newsCover: "img2")
-//            ],
-//            [
-//                newsHeadlines(title: "News MX 1", newsCover: "img2"),
-//                newsHeadlines(title: "News MX 2", newsCover: "img2")
-//            ]
-//        ]
-//
-//        return tempItems
-//    }
     
     func getJsonData()
     {
@@ -58,7 +33,7 @@ class newsListViewController: UIViewController {
             do {
                 let jsonDecoder = JSONDecoder()
                 let responseModel = try jsonDecoder.decode(newsHeadlines.self, from: data!)
-                print(responseModel.articles![0].title!)
+                print(responseModel.articles![0].content!)
                 self.headlinesItems = responseModel.articles!
                 print(self.headlinesItems[0].title!)
                 DispatchQueue.main.async {
@@ -69,18 +44,25 @@ class newsListViewController: UIViewController {
             }
         }.resume()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? newsDetailViewController{
+            var temp = self.headlinesItems[(self.newsTableView.indexPathForSelectedRow?.row)!]
+            destination.article = temp
+        }
+    }
 }
 
 extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return newsItems[section].count
-        return self.headlinesItems.count
+//        return self.headlinesItems.count
+        return 5
     }
 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-////        return newsItems.count
-//        return self.headlinesItems.count
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.headlinesItems.count
+//        return 3
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = self.headlinesItems[indexPath.row]
@@ -88,24 +70,26 @@ extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! newsListCellController
 
         cell.setItem(newsItem: item)
-        
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as? newsListCellController else {return UITableViewCell() }
-        
-//        cell.newsTitle.text = headlinesItems[indexPath.row].title!
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let temp = headlinesItems[indexPath.row]
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        label.text = "NEWS [COUNTRY]"
-////        label.font = UIFont(name: "SF Pro Display Light", size: 12)
-//        label.textAlignment = .center
-//        label.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
-//        label.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
-//
-//
-//        return label
-//    }
+        self.performSegue(withIdentifier: "showDetail", sender: temp)
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "NEWS [COUNTRY]"
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
+        label.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+
+        return label
+    }
+    
+    
 
 }
