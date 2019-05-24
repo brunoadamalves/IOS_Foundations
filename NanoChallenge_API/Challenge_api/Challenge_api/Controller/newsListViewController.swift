@@ -20,12 +20,13 @@ class newsListViewController: UIViewController {
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
-        getJsonData()
+        //Refatorar para ler de um arquivo de configuração
+        getJsonData(endpoint: "https://newsapi.org/v2/top-headlines?country=br&apiKey=c43772649cac4f4d936c628aced03b71")
     }
     
-    func getJsonData()
+    func getJsonData(endpoint: String)
     {
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=br&apiKey=c43772649cac4f4d936c628aced03b71")
+        let url = URL(string: endpoint)
         
         guard let downloadUrl = url else { return }
         URLSession.shared.dataTask(with: downloadUrl) {data, URLResponse, error in
@@ -55,13 +56,7 @@ class newsListViewController: UIViewController {
 
 extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.headlinesItems.count
-        return 5
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
         return self.headlinesItems.count
-//        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,7 +77,7 @@ extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.text = "NEWS [COUNTRY]"
+        label.text = "Brazil news headlines"
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
         label.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
