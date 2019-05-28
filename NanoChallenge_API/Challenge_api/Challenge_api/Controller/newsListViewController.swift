@@ -63,6 +63,7 @@ extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
         let item = self.headlinesItems[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! newsListCellController
+//        cell.imageView!.dowloadFromServer(link: item.urlToImage!, contentMode: .scaleToFill)
 
         cell.setItem(newsItem: item)
 
@@ -74,17 +75,22 @@ extension newsListViewController: UITableViewDataSource, UITableViewDelegate{
 
         self.performSegue(withIdentifier: "showDetail", sender: temp)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.text = "Brazil news headlines"
+        label.text = "Brazil Headlines"
         label.textAlignment = .center
-        label.textColor = #colorLiteral(red: 0.6588235294, green: 0.6588235294, blue: 0.6588235294, alpha: 1)
-        label.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9867547154, green: 0.2447908222, blue: 0.3754977524, alpha: 1)
+        label.backgroundColor = #colorLiteral(red: 0.1491902173, green: 0.141081661, blue: 0.145142287, alpha: 1)
 
         return label
     }
     
-    
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
 }
